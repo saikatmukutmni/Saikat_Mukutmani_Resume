@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saikat Mukutmani – Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #1a4a7a;
+    --blue-light: #2563a8;
+    --text: #1c1c1c;
+    --muted: #555;
+    --line: #d0d8e4;
+    --bg: #ffffff;
+    --accent-bg: #f4f7fb;
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: #e8edf3;
+    color: var(--text);
+    font-size: 13.5px;
+    line-height: 1.6;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .page {
+    width: 794px;
+    margin: 30px auto;
+    background: var(--bg);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--bg);
+    padding: 36px 48px 20px;
+    border-bottom: 3px solid var(--blue);
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .contact-bar a {
+    color: var(--blue-light);
+    text-decoration: none;
+  }
+
+  .contact-bar span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .page-num {
+    display: none;
+  }
+
+  /* ── BODY ── */
+  .body {
+    padding: 0 48px 40px;
+  }
+
+  /* ── ROLE TITLE ── */
+  .role-title {
+    padding: 18px 0 10px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 20px;
+  }
+
+  .role-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .role-subtitle {
+    font-size: 12.5px;
+    color: var(--blue-light);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 22px;
+  }
+
+  .section-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--blue);
+    border-bottom: 1.5px solid var(--line);
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+  }
+
+  /* ── SUMMARY ── */
+  .summary p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    line-height: 1.65;
+  }
+
+  .summary p strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* ── ACHIEVEMENTS ── */
+  .achievements {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+    padding: 14px 16px;
+    background: var(--accent-bg);
+    border-left: 3px solid var(--blue);
+  }
+
+  .achievements li {
+    list-style: none;
+    font-size: 12.5px;
+    color: var(--text);
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .achievements li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--blue-light);
+    font-weight: 700;
+  }
+
+  .achievements li strong {
+    color: var(--blue);
+  }
+
+  /* ── COMPETENCIES ── */
+  .competency-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 28px;
+  }
+
+  .comp-group h4 {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--blue-light);
+    margin-bottom: 5px;
+    letter-spacing: 0.2px;
+  }
+
+  .comp-group ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .comp-group ul li {
+    font-size: 12px;
+    color: var(--muted);
+    padding-left: 12px;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .comp-group ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--blue-light);
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 20px;
+  }
+
+  .skill-group h4 {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--blue-light);
+    margin-bottom: 4px;
+  }
+
+  .skill-group p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── EXPERIENCE ── */
+  .job {
+    margin-bottom: 20px;
+  }
+
+  .job-header {
+    margin-bottom: 6px;
+  }
+
+  .company {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue);
+  }
+
+  .domain {
+    font-size: 11.5px;
+    color: var(--muted);
+    font-style: italic;
+    margin: 1px 0;
+  }
+
+  .job-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .job-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .job-period {
+    font-size: 11.5px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .job ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 6px;
+  }
+
+  .job ul li {
+    font-size: 12.5px;
+    color: var(--muted);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.65;
+    margin-bottom: 3px;
+  }
+
+  .job ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--blue-light);
+    font-weight: 700;
+  }
+
+  .job ul li strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .job + .job {
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+  }
+
+  /* ── EDUCATION ── */
+  .edu-item {
+    margin-bottom: 10px;
+  }
+
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--blue);
+  }
+
+  .edu-school {
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; margin: 0; width: 100%; }
+  }
+
+  @media (max-width: 860px) {
+    .page { width: 100%; margin: 0; }
+    .body, .header { padding-left: 24px; padding-right: 24px; }
+    .competency-grid, .skills-grid { grid-template-columns: 1fr; }
+    .achievements { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Saikat Mukutmani</h1>
+    <div class="contact-bar">
+      <span>✉ <a href="mailto:saikatmukutmani912@gmail.com">saikatmukutmani912@gmail.com</a></span>
+      <span>✆ +91 9833464909</span>
+      <span>🔗 <a href="https://linkedin.com/in/saikat-mukutmani27622440/" target="_blank">linkedin.com/in/saikat-mukutmani27622440</a></span>
+      <span>📍 India</span>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- ROLE TITLE -->
+    <div class="role-title">
+      <h2>Operations | Service Delivery | Data Analytics | MIS Leader</h2>
+      <div class="role-subtitle">Applied Project Management &nbsp;|&nbsp; Quality Control &amp; Waste Minimization &nbsp;|&nbsp; SLA Governance</div>
+    </div>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="section summary">
+      <div class="section-title">Professional Summary</div>
+      <p>Operations, Service Delivery, Data Analytics, and MIS leader with <strong>20+ years of experience</strong> managing large-scale delivery portfolios across BFSI, Digital Media, Enterprise Training, and U.S. Background Verification domains.</p>
+      <p>Expert in <strong>end-to-end service delivery, MIS strategy, and analytics-driven decision frameworks</strong>, with a proven ability to scale operations from 50 to 346 FTE while maintaining <strong>99.9%+ accuracy and SLA compliance</strong>.</p>
+      <p>Strong track record in <strong>building automated reporting ecosystems, designing KPI dashboards, improving productivity (12–30%), and enabling leadership decisions through data insights</strong>.</p>
+      <p>Apply structured <strong>project management methodologies</strong> and <strong>quality control practices focused on waste minimization, process optimization, and continuous improvement</strong>.</p>
+    </div>
+
+    <!-- KEY ACHIEVEMENTS -->
+    <div class="section">
+      <div class="section-title">Key Achievements</div>
+      <ul class="achievements">
+        <li>Scaled operations from <strong>50 to 346 FTE</strong> with 99.9%+ accuracy</li>
+        <li>Delivered <strong>12–30%</strong> productivity improvement across programs</li>
+        <li>Reduced reporting effort by <strong>70%</strong> through automation</li>
+        <li>Strengthened governance through data-driven MIS frameworks</li>
+        <li>Improved escalation control via analytics-led monitoring systems</li>
+      </ul>
+    </div>
+
+    <!-- CORE COMPETENCIES -->
+    <div class="section">
+      <div class="section-title">Core Competencies</div>
+      <div class="competency-grid">
+        <div class="comp-group">
+          <h4>Operations &amp; Service Delivery</h4>
+          <ul>
+            <li>End-to-End Service Delivery Management</li>
+            <li>Multi-Account Portfolio Governance</li>
+            <li>SLA / KPI Monitoring &amp; Compliance</li>
+            <li>Escalation &amp; Risk Management</li>
+            <li>Workforce Planning &amp; Capacity Optimization</li>
+            <li>Transition, Ramp-Up &amp; Delivery Stabilization</li>
+          </ul>
+        </div>
+        <div class="comp-group">
+          <h4>Data Analytics &amp; MIS</h4>
+          <ul>
+            <li>MIS Strategy &amp; Reporting Transformation</li>
+            <li>Dashboard Development &amp; Data Visualization</li>
+            <li>Performance Analytics &amp; Insight Generation</li>
+            <li>Data-Driven Decision Support</li>
+            <li>Automation (Reporting &amp; Process Optimization)</li>
+            <li>KPI Framework Design &amp; Governance</li>
+          </ul>
+        </div>
+        <div class="comp-group">
+          <h4>Process Excellence &amp; Governance</h4>
+          <ul>
+            <li>Applied Project Management Practices</li>
+            <li>Quality Control &amp; Waste Minimization</li>
+            <li>Continuous Improvement (Lean Six Sigma – DMAIC)</li>
+            <li>Cost Optimization &amp; Productivity Enhancement</li>
+          </ul>
+        </div>
+        <div class="comp-group">
+          <h4>Stakeholder Management</h4>
+          <ul>
+            <li>Client &amp; Leadership Engagement</li>
+            <li>Cross-Functional Collaboration</li>
+            <li>Governance Cadence (WBR, MBR, QBR)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Data &amp; Analytics</h4>
+          <p>Power BI | SQL Server | Python (NumPy, Pandas, Matplotlib, Seaborn)</p>
+        </div>
+        <div class="skill-group">
+          <h4>Automation &amp; Tools</h4>
+          <p>UiPath (RPA Development &amp; Automation) | Advanced Excel (Dashboards, Automation) | Moodle LMS</p>
+        </div>
+        <div class="skill-group">
+          <h4>Web &amp; Technology</h4>
+          <p>HTML | CSS | JavaScript | React JS | Node.js | Express.js | PHP</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <div class="section">
+      <div class="section-title">Professional Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="company">Neeyamo Enterprise Solutions Pvt. Ltd.</div>
+          <div class="domain">BGV US-PR</div>
+          <div class="job-meta">
+            <span class="job-title">Manager – Service Delivery &amp; MIS</span>
+            <span class="job-period">Jul 2025 – Present</span>
+          </div>
+        </div>
+        <ul>
+          <li>Manage <strong>end-to-end service delivery for 8 enterprise accounts</strong>, ensuring SLA adherence and operational stability</li>
+          <li>Scaled operations from <strong>50 to 346 FTE</strong>, maintaining <strong>99.9%+ service accuracy</strong></li>
+          <li>Lead governance reviews (weekly/monthly/quarterly) with <strong>data-backed dashboards and insights</strong></li>
+          <li>Reduced escalations by <strong>22%</strong> through <strong>proactive analytics and risk monitoring frameworks</strong></li>
+          <li>Implemented <strong>automated MIS reporting</strong>, reducing manual effort by <strong>70%</strong></li>
+          <li>Standardized SOPs and quality frameworks to improve compliance and ramp-up efficiency</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="company">HCL Technologies</div>
+          <div class="domain">L&amp;D – EdTech</div>
+          <div class="job-meta">
+            <span class="job-title">Deputy Manager – Training Operations, MIS &amp; Analytics</span>
+            <span class="job-period">Feb 2022 – Apr 2025</span>
+          </div>
+        </div>
+        <ul>
+          <li>Managed <strong>global training operations and MIS reporting frameworks</strong></li>
+          <li>Developed <strong>automated dashboards</strong>, improving reporting turnaround time by <strong>60%</strong></li>
+          <li>Enabled <strong>capacity planning and utilization tracking</strong> using analytics models</li>
+          <li>Conducted KPI reviews and trend analysis to improve <strong>decision-making and transparency</strong></li>
+          <li>Collaborated with cross-functional teams to align <strong>training outcomes with business KPIs</strong></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="company">Neeyamo Enterprise Solutions Pvt. Ltd.</div>
+          <div class="domain">BGV US-PR</div>
+          <div class="job-meta">
+            <span class="job-title">Manager – Operations &amp; MIS</span>
+            <span class="job-period">Jan 2021 – Jan 2022</span>
+          </div>
+        </div>
+        <ul>
+          <li>Led <strong>SLA governance and MIS reporting</strong> for verification programs</li>
+          <li>Designed <strong>TAT and productivity tracking frameworks</strong></li>
+          <li>Improved workflow visibility and compliance through structured dashboards</li>
+          <li>Reduced operational risks via data-backed monitoring mechanisms</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="company">Financial Agency Consultants India Pvt. Ltd.</div>
+          <div class="domain">Insurance</div>
+          <div class="job-meta">
+            <span class="job-title">Manager – Training &amp; MIS</span>
+            <span class="job-period">Nov 2019 – Apr 2020</span>
+          </div>
+        </div>
+        <ul>
+          <li>Developed <strong>training programs aligned with business performance metrics</strong></li>
+          <li>Built dashboards to track <strong>training effectiveness and workforce readiness</strong></li>
+          <li>Delivered insights to leadership for improving <strong>training ROI and productivity</strong></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="company">V2 Solutions</div>
+          <div class="domain">Media &amp; Entertainment</div>
+          <div class="job-meta">
+            <span class="job-title">Manager – Operations, MIS &amp; Automation</span>
+            <span class="job-period">Jul 2011 – Sep 2019</span>
+          </div>
+        </div>
+        <ul>
+          <li>Managed <strong>digital media service delivery portfolio</strong> for global clients</li>
+          <li>Implemented <strong>UiPath RPA solutions</strong>, reducing FTE cost by <strong>12%</strong> and improving TAT by <strong>30%</strong></li>
+          <li>Built <strong>analytics-driven MIS systems</strong> for SLA tracking and reporting</li>
+          <li>Strengthened governance, risk monitoring, and operational controls</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">Postgraduate Diploma in Business Management (Finance)</div>
+        <div class="edu-school">Prin. L. N. Welingkar Institute of Management Development &amp; Research, Mumbai &nbsp;–&nbsp; <strong>Distinction</strong></div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Bachelor of Commerce</div>
+        <div class="edu-school">University of Calcutta &nbsp;–&nbsp; <strong>First Class</strong></div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+</div><!-- /page -->
+
+</body>
+</html>
